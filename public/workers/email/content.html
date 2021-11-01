@@ -1,0 +1,17 @@
+{{ define "layout_email_content" }}
+
+{{ template "layout_email_head" .}}
+<div class="body">
+    {{ if ne title "" }}
+        <h1 class="title">{{ title }}</h1>
+            <br>
+    {{ end }}
+    {{ if ne content "" }}
+        <h1 class="content">{{ content }}</h1>
+    {{ end }}
+    <p class="thanks">Thanks,</p>
+    <p class="team">Wiki-Link Team</p>
+</div>
+{{ template "layout_email_footer" .}}
+
+{{end}}

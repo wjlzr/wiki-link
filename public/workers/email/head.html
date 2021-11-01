@@ -1,0 +1,112 @@
+{{ define "layout_email_head" }}
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            list-style: none;
+            outline: none;
+            font-family: Roboto, Helvetica, sans-serif, serif, EmojiFont;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+        }
+
+        .box{
+            width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+            overflow: hidden;
+        }
+        .container{
+            margin: 0 auto;
+            max-width: 524px;
+            margin-bottom: 30px;
+        }
+        .logo{
+            margin: 0 auto;
+            margin-top: 100px;
+            max-width: 80%;
+        }
+        .logo img{
+            height: 27px;
+        }
+        .body{
+            margin: 0 auto;
+            margin-top: 50px;
+            background: white;
+            padding: 40px 35px;
+            border-radius: 3px;
+            max-width: 80%;
+        }
+        h1{
+            color: #373B42;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 40px;
+        }
+        h4{
+            margin-top: 20px;
+            color: #373B42;
+            font-size: 18px;
+            font-family: Roboto,Helvetica,sans-serif;
+            font-weight: 400;
+            text-align: left;
+            padding: 0;
+        }
+        button{
+            margin-top: 20px;
+            padding: 16px 24px;
+            background: #048bff;
+            border-radius: 3px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .thanks{
+            margin-top: 20px;
+            color: #7a7a7a;
+            font-size: 14px;
+        }
+        .team{
+            color: #7a7a7a;
+            font-size: 14px;
+        }
+        .help{
+            color: #a8a8a8;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        .help-f{
+            margin-top: 30px;
+        }
+        .help a{
+            color: #a8a8a8;
+        }
+        @media screen and (max-width: 600px) {
+            .container{
+                width: 100%;
+            }
+            .logo{
+                padding-left: 25px;
+            }
+            .help{
+                padding-left: 25px;
+            }
+            .body{
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="">
+    </div>
+{{end}}

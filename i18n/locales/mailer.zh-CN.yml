@@ -1,0 +1,13 @@
+"zh-CN":
+  mailer:
+    notify:
+      OKLink500:
+        subject: OKLink接口访问不通
+        title: 警报：OKLink接口访问不通
+        content: 接口 {{.content}} 访问不通
+      TokenViewKeyExpired:
+        subject: TokenView接口访问不通
+        title: 警报：TokenView接口访问不通
+        content: 接口 {{.content}} 访问不通,可能是Key过期了
+    footer:
+      contact: 请联系 {{.contact}}

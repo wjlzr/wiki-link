@@ -1,0 +1,14 @@
+.vscode
+docker_file/
+pids/*.pid
+bin/
+
+node_modules
+*.js
+package-lock.json
+package.json
+
+
+*.exe
+*.log
+.idea

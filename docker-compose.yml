@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  schedule:
+    build:
+      context: .
+      dockerfile: service/schedules/Dockerfile
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    volumes:
+      - ./logs:/app/logs
+
+  workers:
+    build:
+      context: .
+      dockerfile: service/workers/Dockerfile
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    volumes:
+      - ./logs:/app/logs
+
+  server:
+    build:
+      context: .
+      dockerfile: cmd/Dockerfile
+    restart: always
+    ports:
+      - '8080:8080'
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    volumes:
+      - ./logs:/app/logs

@@ -1,0 +1,66 @@
+base:
+  redis: 1  
+
+oklink:
+  api_key: "470f7602-87a8-4809-ba87-674c5b456f29"
+
+database:
+  dbtype: mysql
+  name: link #wiki-link
+  host: 127.0.0.1
+  password:
+  port: 3306
+  username: root
+  max_open: 10
+  max_idle: 5
+
+rediscluster:
+  addrs: ["127.0.0.1:9001","127.0.0.1:9002"]
+  password:
+  dialtimeout: 10
+  poolsize: 20
+
+redis:
+  addr: 127.0.0.1:6379
+  password:
+  dialtimeout: 10
+  poolsize: 20
+
+smtp:
+  host: smtp.mxhichina.com
+  port: 465
+  username: notification@wikipay.net
+  password: Test123@1o&
+  content_type: text/plain
+
+workers:
+  - name: AddressCheck
+    queue: wiki-link.address.check
+    log: logs/address_check.log
+    max_query: 1000
+    threads: 10
+  - name: OKLinkBlockHeightCheck
+    queue: wiki-link.ok-link.block.height.check
+    log: logs/oklink_block_height_check.log
+    max_query: 1000
+    threads: 2
+  - name: ChainInfoBlockHeightCheck
+    queue: wiki-link.chain.info.block.height.check
+    log: logs/chain_info_block_height_check.log
+    max_query: 1000
+    threads: 0
+  - name: SendEmail
+    queue: wiki-link.email.send
+    log: logs/email.log
+    threads: 1
+
+qiniu:
+  access_key: P4i11d2V8IpsBIkvQPlmUWbt-72UY-fLdY9WaWHa
+  secret_key: wgU5keLT1nyNQ4cIUIn9XDwtOP2oZvOMJyxhkYS-
+  bucket: backup
+
+s3:
+  AWS_REGION: ap-northeast-2
+  AWS_ACCESS_KEY_ID: 
+  AWS_SECRET_ACCESS_KEY: 
+  S3_BACKUP_BUCKET: 
